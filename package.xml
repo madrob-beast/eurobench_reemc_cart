@@ -2,10 +2,10 @@
 <package>
   <name>eurobench_reemc_door</name>
   <version>1.0.0</version>
-  <description>Simulation files for the E10 - Open the door on the 1st SciRoc Challenge.</description>
-  <maintainer email="josevicentejaramillo@gmail.com">Jose V. Jaramillo</maintainer>
+  <description>Simulation files Eurobench-BEAST project.</description>
+  <maintainer email="suriani@diag.uniroma1.it">V. Suriani</maintainer>
   <license>Modified BSD</license>
-  <author email="josevicentejaramillo@gmail.com">Jose V. Jaramillo</author>
+  <author email="suriani@diag.uniroma1.it">V. Suriani</author>
 
   <buildtool_depend>catkin</buildtool_depend>
 

@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<package>
+  <name>eurobench_reemc_door</name>
+  <version>1.0.0</version>
+  <description>Simulation files for the E10 - Open the door on the 1st SciRoc Challenge.</description>
+  <maintainer email="josevicentejaramillo@gmail.com">Jose V. Jaramillo</maintainer>
+  <license>Modified BSD</license>
+  <author email="josevicentejaramillo@gmail.com">Jose V. Jaramillo</author>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <run_depend>reemc_controller_configuration_gazebo</run_depend>
+  <run_depend>reemc_description</run_depend>
+  <run_depend>reemc_hardware_gazebo</run_depend>
+  <run_depend>reemc_bringup</run_depend>
+  <run_depend>gazebo_plugins</run_depend>
+  <run_depend>pal_gazebo_plugins</run_depend>
+  <run_depend>reemc_gazebo</run_depend>
+
+</package>

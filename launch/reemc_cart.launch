@@ -3,29 +3,21 @@
 <launch>
   
   <arg name="cart"  default="simple"/>  <!-- empty,... -->  
-  <arg name="door_opening_side"  default="CW"/>  <!-- empty,... -->  
+<!--  <arg name="door_opening_side"  default="CW"/>  -->  
   <arg name="robot_approach_side"  default="CW"/>  <!-- empty,... -->  
   <arg name="robot"  default="full_ft_hey5"/>  <!-- empty,... -->
 <!--  <arg name="gzpose" default="-x 1.0 -y 0.4 -z 0.86 -R 0.0 -P 0.0 -Y 3.1416"/> -->
-  <arg name="gui" default="true"/>
+<!--  <arg name="gui" default="true"/>
   <arg name="debug" default="false"/>
   <arg name="direction" default="push"/>
   <arg name="robot_placement_cw" default="true"/>
-  <arg name="self_closing" default="n"/>
+  <arg name="self_closing" default="n"/> -->  
   
   
-  <!-- set robot position -->
-  <!--   <group if="$(eval arg('robot_placement') ==true)"> 
-    <arg name="gzpose" value="-x 1.0 -y 0.4 -z 0.86 -R 0.0 -P 0.0 -Y 3.1416"/>
-  </group>
+
   
-  <group if="$(eval arg('robot_placement') ==false)"> 
-    <arg name="gzpose" value="-x -1.0 -y 0.4 -z 0.86 -R 0.0 -P 0.0 -Y 0"/>
-  </group>
-   -->
-  
-  <arg name="gzpose" default="-x 1.0 -y 0.4 -z 0.86 -R 0.0 -P 0.0 -Y 3.1416" unless="$(arg robot_placement_cw)"/>
-  <arg name="gzpose" value="-x -1.0 -y 0.4 -z 0.86 -R 0.0 -P 0.0 -Y 0" if="$(arg robot_placement_cw)"/>
+<!--  <arg name="gzpose" default="-x 1.0 -y 0.4 -z 0.86 -R 0.0 -P 0.0 -Y 3.1416" unless="$(arg robot_placement_cw)"/>
+  <arg name="gzpose" value="-x -1.0 -y 0.4 -z 0.86 -R 0.0 -P 0.0 -Y 0" if="$(arg robot_placement_cw)"/>  -->
 
 
   <!--   <group if="$(arg foo)">-->
@@ -35,11 +27,11 @@
   
 
   <!-- start up world -->
-  <env name="GAZEBO_MODEL_PATH" value="$(find eurobench_reemc_door)/models:$(optenv GAZEBO_MODEL_PATH)"/>
+<!--  <env name="GAZEBO_MODEL_PATH" value="$(find eurobench_reemc_cart)/models:$(optenv GAZEBO_MODEL_PATH)"/>
   <env name="GAZEBO_DOOR_MODEL_DIRECTION" value="$(arg direction)"/>
-  <env name="GAZEBO_DOOR_MODEL_SELFCLOSE" value="$(arg self_closing)"/>
+  <env name="GAZEBO_DOOR_MODEL_SELFCLOSE" value="$(arg self_closing)"/>  -->
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
-    <arg name="world_name" value="$(find eurobench_reemc_door)/worlds/$(arg door).world"/>
+    <arg name="world_name" value="$(find eurobench_reemc_cart)/worlds/$(arg cart).world"/>
     <arg name="paused" value="false"/>
     <arg name="use_sim_time" value="true"/>
     <arg name="gui" value="true"/>

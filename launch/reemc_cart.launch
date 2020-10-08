@@ -2,7 +2,7 @@
 
 <launch>
   
-  <arg name="cart"  default="empty"/>  <!-- empty,... -->  
+  <arg name="cart"  default="simple"/>  <!-- empty,... -->  
 <!--  <arg name="door_opening_side"  default="CW"/>  -->  
   <arg name="robot_approach_side"  default="CW"/>  <!-- empty,... -->  
   <arg name="robot"  default="full_ft_hey5"/>  <!-- empty,... -->

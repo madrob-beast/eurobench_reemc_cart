@@ -152,16 +152,16 @@
         <collision name='collision'>
           <geometry>
             <cylinder>
-              <radius>0.1</radius>
-              <length>0.08</length>
+              <radius>0.085</radius>
+              <length>0.06</length>
             </cylinder>
           </geometry>
         </collision>
         <visual name='visual'>
           <geometry>
             <cylinder>
-              <radius>0.1</radius>
-              <length>0.08</length>
+              <radius>0.085</radius>
+              <length>0.06</length>
             </cylinder>
           </geometry>
           <material>
@@ -204,16 +204,16 @@
         <collision name='collision'>
           <geometry>
             <cylinder>
-              <radius>0.1</radius>
-              <length>0.08</length>
+              <radius>0.085</radius>
+              <length>0.06</length>
             </cylinder>
           </geometry>
         </collision>
         <visual name='visual'>
           <geometry>
             <cylinder>
-              <radius>0.1</radius>
-              <length>0.08</length>
+              <radius>0.085</radius>
+              <length>0.06</length>
             </cylinder>
           </geometry>
           <material>
@@ -256,16 +256,16 @@
         <collision name='collision'>
           <geometry>
             <cylinder>
-              <radius>0.1</radius>
-              <length>0.08</length>
+              <radius>0.085</radius>
+              <length>0.06</length>
             </cylinder>
           </geometry>
         </collision>
         <visual name='visual'>
           <geometry>
             <cylinder>
-              <radius>0.1</radius>
-              <length>0.08</length>
+              <radius>0.085</radius>
+              <length>0.06</length>
             </cylinder>
           </geometry>
           <material>
@@ -304,16 +304,16 @@
         <collision name='collision'>
           <geometry>
             <cylinder>
-              <radius>0.1</radius>
-              <length>0.08</length>
+              <radius>0.085</radius>
+              <length>0.06</length>
             </cylinder>
           </geometry>
         </collision>
         <visual name='visual'>
           <geometry>
             <cylinder>
-              <radius>0.1</radius>
-              <length>0.08</length>
+              <radius>0.085</radius>
+              <length>0.06</length>
             </cylinder>
           </geometry>
           <material>

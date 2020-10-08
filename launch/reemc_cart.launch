@@ -27,8 +27,8 @@
   
 
   <!-- start up world -->
-<!--  <env name="GAZEBO_MODEL_PATH" value="$(find eurobench_reemc_cart)/models:$(optenv GAZEBO_MODEL_PATH)"/>
-  <env name="GAZEBO_DOOR_MODEL_DIRECTION" value="$(arg direction)"/>
+  <env name="GAZEBO_MODEL_PATH" value="$(find eurobench_reemc_cart)/models:$(optenv GAZEBO_MODEL_PATH)"/>
+<!--  <env name="GAZEBO_DOOR_MODEL_DIRECTION" value="$(arg direction)"/>
   <env name="GAZEBO_DOOR_MODEL_SELFCLOSE" value="$(arg self_closing)"/>  -->
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
     <arg name="world_name" value="$(find eurobench_reemc_cart)/worlds/$(arg cart).world"/>

@@ -137,7 +137,7 @@
         </visual>
       </link>
       <link name='wheel_front_left'>
-        <pose frame=''>0.25 0.298 0.1 -1.5708 -0.087266 0</pose>
+        <pose frame=''>0.3 0.29 0.1 -1.5708 -0.087266 0</pose>
         <inertial>
           <mass>0.5</mass>
           <inertia>
@@ -189,7 +189,7 @@
         </axis2>
       </joint>
       <link name='wheel_front_right'>
-        <pose frame=''>0.25 -0.298 0.1 -1.5708 -0.087266 0</pose>
+        <pose frame=''>0.3 -0.29 0.1 -1.5708 -0.087266 0</pose>
         <inertial>
           <mass>0.5</mass>
           <inertia>
@@ -241,7 +241,7 @@
         </axis2>
       </joint>
       <link name='wheel_rear_left'>
-        <pose frame=''>-0.25 0.298 0.1 -1.5708 0 0</pose>
+        <pose frame=''>-0.3 0.29 0.1 -1.5708 0 0</pose>
         <inertial>
           <mass>0.5</mass>
           <inertia>
@@ -289,7 +289,7 @@
         </axis>
       </joint>
       <link name='wheel_rear_right'>
-        <pose frame=''>-0.25 -0.298 0.1 -1.5708 0 0</pose>
+        <pose frame=''>-0.3 -0.29 0.1 -1.5708 0 0</pose>
         <inertial>
           <mass>0.5</mass>
           <inertia>

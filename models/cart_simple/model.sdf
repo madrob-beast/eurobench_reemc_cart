@@ -118,14 +118,14 @@
         <collision name='collision'>
           <geometry>
             <box>
-              <size>0.65 0.5 0.03</size>
+              <size>0.6 0.5 0.03</size>
             </box>
           </geometry>
         </collision>
         <visual name='visual'>
           <geometry>
             <box>
-              <size>0.65 0.5 0.03</size>
+              <size>0.6 0.5 0.03</size>
             </box>
           </geometry>
           <material>
@@ -137,7 +137,7 @@
         </visual>
       </link>
       <link name='wheel_front_left'>
-        <pose frame=''>0.5 0.298 0.1 -1.5708 -0.087266 0</pose>
+        <pose frame=''>0.3 0.298 0.1 -1.5708 -0.087266 0</pose>
         <inertial>
           <mass>0.5</mass>
           <inertia>
@@ -152,7 +152,7 @@
         <collision name='collision'>
           <geometry>
             <cylinder>
-              <radius>0.15</radius>
+              <radius>0.1</radius>
               <length>0.08</length>
             </cylinder>
           </geometry>
@@ -160,7 +160,7 @@
         <visual name='visual'>
           <geometry>
             <cylinder>
-              <radius>0.15</radius>
+              <radius>0.1</radius>
               <length>0.08</length>
             </cylinder>
           </geometry>
@@ -189,7 +189,7 @@
         </axis2>
       </joint>
       <link name='wheel_front_right'>
-        <pose frame=''>0.5 -0.298 0.1 -1.5708 -0.087266 0</pose>
+        <pose frame=''>0.3 -0.298 0.1 -1.5708 -0.087266 0</pose>
         <inertial>
           <mass>0.5</mass>
           <inertia>
@@ -241,7 +241,7 @@
         </axis2>
       </joint>
       <link name='wheel_rear_left'>
-        <pose frame=''>-0.5 0.298 0.1 -1.5708 0 0</pose>
+        <pose frame=''>-0.3 0.298 0.1 -1.5708 0 0</pose>
         <inertial>
           <mass>0.5</mass>
           <inertia>
@@ -289,7 +289,7 @@
         </axis>
       </joint>
       <link name='wheel_rear_right'>
-        <pose frame=''>-0.5 -0.298 0.1 -1.5708 0 0</pose>
+        <pose frame=''>-0.3 -0.298 0.1 -1.5708 0 0</pose>
         <inertial>
           <mass>0.5</mass>
           <inertia>

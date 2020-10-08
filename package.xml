@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <package>
-  <name>eurobench_reemc_door</name>
+  <name>eurobench_reemc_cart</name>
   <version>1.0.0</version>
   <description>Simulation files Eurobench-BEAST project.</description>
   <maintainer email="suriani@diag.uniroma1.it">V. Suriani</maintainer>

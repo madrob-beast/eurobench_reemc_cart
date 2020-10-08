@@ -23,7 +23,7 @@
         <geometry>
           <mesh>
             <uri>model://cart_simple/meshes/cart_upper.stl</uri>
-            <scale>1 1.5 1.5</scale>
+            <scale>1 1.5 1.1</scale>
           </mesh>
         </geometry>
         <material>
@@ -50,7 +50,7 @@
         <geometry>
           <mesh>
             <uri>model://cart_simple/meshes/cart_upper.stl</uri>
-	    <scale>1 1.5 1.5</scale>
+	    <scale>1 1.5 1.1</scale>
           </mesh>
         </geometry>
         <surface>
@@ -101,6 +101,7 @@
       </collision>
     </link>
     <model name='cart_front_steer'>
+<scale>0.6 0.6 0.6</scale>
       <link name='chassis'>
         <pose frame=''>0 0 0.15 0 -0 0</pose>
         <inertial>

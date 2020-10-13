@@ -1,8 +1,8 @@
 <?xml version='1.0'?>
 <sdf version='1.6'>
   <model name='walker'>
-    <link name='link_1'>
-      <pose frame=''>0.6 -0.24 0.06 1.57 -0 1.57</pose>
+    <link name='link_0'>
+      <pose frame=''>0.1 1.7e-05 0.015 1.56998 -0 0</pose>
       <inertial>
         <mass>1</mass>
         <inertia>
@@ -22,7 +22,8 @@
         <pose frame=''>0 0 0 0 -0 0</pose>
         <geometry>
           <mesh>
-            <uri>model://cart_simple/meshes/walker_upper.stl</uri>
+            <uri>model://walker_simple/meshes/walker_upper.stl</uri> 
+<!--            <uri>/home/sapienzbot/Desktop/walker_simple/meshes/walker_upper.stl</uri> -->
             <scale>1 1 1</scale>
           </mesh>
         </geometry>
@@ -49,7 +50,8 @@
         <pose frame=''>0 0 0 0 -0 0</pose>
         <geometry>
           <mesh>
-            <uri>model://cart_simple/meshes/walker_upper.stl</uri>
+            <uri>model://walker_simple/meshes/walker_upper.stl</uri> 
+<!--            <uri>/home/sapienzbot/Desktop/walker_simple/meshes/walker_upper.stl</uri> -->>
 	    <scale>1 1 1</scale>
           </mesh>
         </geometry>
@@ -102,7 +104,7 @@
     </link>
     <model name='cart_front_steer'>
       <link name='chassis'>
-        <pose frame=''>0 0 0.1 0 -0 0</pose>
+        <pose frame=''>0 0 0.15 0 -0 0</pose>
         <inertial>
           <pose frame=''>0.1 0 0 0 -0 0</pose>
           <mass>10</mass>
@@ -115,29 +117,10 @@
             <iyz>0</iyz>
           </inertia>
         </inertial>
-        <collision name='collision'>
-          <geometry>
-            <box>
-              <size>0.6 0.5 0.03</size>
-            </box>
-          </geometry>
-        </collision>
-        <visual name='visual'>
-          <geometry>
-            <box>
-              <size>0.6 0.5 0.03</size>
-            </box>
-          </geometry>
-          <material>
-            <script>
-              <uri>file://media/materials/scripts/gazebo.material</uri>
-              <name>Gazebo/Grey</name>
-            </script>
-          </material>
-        </visual>
+        
       </link>
       <link name='wheel_front_left'>
-        <pose frame=''>0.3 0.28 0.1 -1.5708 -0.087266 0</pose>
+        <pose frame=''>0.31 0.25 0.15 -1.5708 -0.087266 0</pose>
         <inertial>
           <mass>0.5</mass>
           <inertia>
@@ -152,7 +135,7 @@
         <collision name='collision'>
           <geometry>
             <cylinder>
-              <radius>0.085</radius>
+              <radius>0.08</radius>
               <length>0.04</length>
             </cylinder>
           </geometry>
@@ -160,7 +143,7 @@
         <visual name='visual'>
           <geometry>
             <cylinder>
-              <radius>0.085</radius>
+              <radius>0.08</radius>
               <length>0.04</length>
             </cylinder>
           </geometry>
@@ -189,7 +172,7 @@
         </axis2>
       </joint>
       <link name='wheel_front_right'>
-        <pose frame=''>0.3 -0.28 0.1 -1.5708 -0.087266 0</pose>
+        <pose frame=''>0.31 -0.25 0.15 -1.5708 -0.087266 0</pose>
         <inertial>
           <mass>0.5</mass>
           <inertia>
@@ -204,7 +187,7 @@
         <collision name='collision'>
           <geometry>
             <cylinder>
-              <radius>0.085</radius>
+              <radius>0.08</radius>
               <length>0.04</length>
             </cylinder>
           </geometry>
@@ -212,7 +195,7 @@
         <visual name='visual'>
           <geometry>
             <cylinder>
-              <radius>0.085</radius>
+              <radius>0.08</radius>
               <length>0.04</length>
             </cylinder>
           </geometry>
@@ -241,7 +224,7 @@
         </axis2>
       </joint>
       <link name='wheel_rear_left'>
-        <pose frame=''>-0.3 0.28 0.1 -1.5708 0 0</pose>
+        <pose frame=''>-0.2 0.285 0.15 -1.5708 0 0</pose>
         <inertial>
           <mass>0.5</mass>
           <inertia>
@@ -256,7 +239,7 @@
         <collision name='collision'>
           <geometry>
             <cylinder>
-              <radius>0.085</radius>
+              <radius>0.08</radius>
               <length>0.04</length>
             </cylinder>
           </geometry>
@@ -264,7 +247,7 @@
         <visual name='visual'>
           <geometry>
             <cylinder>
-              <radius>0.085</radius>
+              <radius>0.08</radius>
               <length>0.04</length>
             </cylinder>
           </geometry>
@@ -289,7 +272,7 @@
         </axis>
       </joint>
       <link name='wheel_rear_right'>
-        <pose frame=''>-0.3 -0.28 0.1 -1.5708 0 0</pose>
+        <pose frame=''>-0.2 -0.285 0.15 -1.5708 0 0</pose>
         <inertial>
           <mass>0.5</mass>
           <inertia>
@@ -304,7 +287,7 @@
         <collision name='collision'>
           <geometry>
             <cylinder>
-              <radius>0.085</radius>
+              <radius>0.08</radius>
               <length>0.04</length>
             </cylinder>
           </geometry>
@@ -312,7 +295,7 @@
         <visual name='visual'>
           <geometry>
             <cylinder>
-              <radius>0.085</radius>
+              <radius>0.08</radius>
               <length>0.04</length>
             </cylinder>
           </geometry>
@@ -336,27 +319,12 @@
           </limit>
         </axis>
       </joint>
-      <pose frame=''>0 0 0 0 -0 0</pose>
+      <pose frame=''>0.165829 -1.7e-05 -0.020463 0 -0 0</pose>
     </model>
-    <joint name='chassis_JOINT_1' type='fixed'>
+    <joint name='chassis_JOINT_3' type='fixed'>
       <parent>cart_front_steer::chassis</parent>
-      <child>link_1</child>
+      <child>link_0</child>
       <pose frame=''>0 0 0 0 -0 0</pose>
-      <axis>
-        <xyz>1 0 0</xyz>
-        <use_parent_model_frame>0</use_parent_model_frame>
-        <limit>
-          <lower>-1.79769e+308</lower>
-          <upper>1.79769e+308</upper>
-          <effort>-1</effort>
-          <velocity>-1</velocity>
-        </limit>
-        <dynamics>
-          <spring_reference>0</spring_reference>
-          <spring_stiffness>0</spring_stiffness>
-          <damping>0</damping>
-        </dynamics>
-      </axis>
       <physics>
         <ode>
           <limit>

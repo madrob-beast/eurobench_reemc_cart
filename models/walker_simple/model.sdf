@@ -2,7 +2,7 @@
 <sdf version='1.6'>
   <model name='walker'>
     <link name='link_0'>
-      <pose frame=''>0.1 1.7e-05 0.001 1.56998 -0 0</pose>
+      <pose frame=''>0.1 1.7e-05 -0.02 1.56998 -0 0</pose>
       <inertial>
         <mass>1</mass>
         <inertia>

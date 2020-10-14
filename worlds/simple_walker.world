@@ -29,7 +29,7 @@
     </include>
     <!-- A door -->
     <include>
-      <uri>model://cart_simple</uri>
+      <uri>model://walker_simple</uri>
     </include>
     
  <!--   <include>

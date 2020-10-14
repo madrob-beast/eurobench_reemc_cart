@@ -24,7 +24,7 @@
           <mesh>
             <uri>model://walker_simple/meshes/walker_upper.stl</uri> 
 <!--            <uri>/home/sapienzbot/Desktop/walker_simple/meshes/walker_upper.stl</uri> -->
-            <scale>1 1 1.5</scale>
+            <scale>1 1.5 1</scale>
           </mesh>
         </geometry>
         <material>
@@ -51,7 +51,7 @@
         <geometry>
           <mesh>
             <uri>model://walker_simple/meshes/walker_upper.stl</uri> 
-	    <scale>1 1 1.5</scale>
+	    <scale>1 1.5 1</scale>
           </mesh>
         </geometry>
         <surface>

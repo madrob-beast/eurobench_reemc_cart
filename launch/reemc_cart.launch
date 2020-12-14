@@ -2,7 +2,7 @@
 
 <launch>
   
-  <arg name="cart"  default="simple_cart"/>  <!-- empty,... -->  
+  <arg name="cart"  default="simple_cart_wt_testbed"/>  <!-- empty,... -->  
 <!--  <arg name="door_opening_side"  default="CW"/>  -->  
   <arg name="robot_approach_side"  default="CW"/>  <!-- empty,... -->  
   <arg name="robot"  default="full_ft_hey5"/>  <!-- empty,... -->
@@ -11,8 +11,6 @@
   <arg name="debug" default="false"/>
 <!--  <arg name="direction" default="push"/> --> 
   <arg name="robot_placement_cw" default="true"/>
-  <arg name="self_closing" default="n"/> -->  
-  
   
 
   

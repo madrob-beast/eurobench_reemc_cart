@@ -4,7 +4,7 @@
     <link name='link_0'>
       <pose frame=''>0 0 0 0 -0 1.5708</pose>
       <inertial>
-        <mass>100</mass>
+        <mass>10000</mass>
         <inertia>
           <ixx>0.166667</ixx>
           <ixy>0</ixy>
@@ -19,7 +19,7 @@
       <self_collide>0</self_collide>
       <kinematic>0</kinematic>
       <visual name='visual'>
-        <pose frame=''>-2.3 -2 0 0 -0 0</pose>
+        <pose frame=''>-2.3 1 0 0 -0 0</pose>
         <geometry>
           <mesh>
             <uri>model://beast_testbed_no_floor/meshes/testbed_nofloor.dae</uri>
@@ -46,7 +46,7 @@
       <collision name='collision'>
         <laser_retro>0</laser_retro>
         <max_contacts>10</max_contacts>
-        <pose frame=''>-2.3 -2 0 0 -0 0</pose>
+        <pose frame=''>-2.3 1 0 0 -0 0</pose>
         <geometry>
           <mesh>
             <uri>model://beast_testbed_no_floor/meshes/testbed_nofloor.dae</uri>

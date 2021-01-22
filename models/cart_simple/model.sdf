@@ -102,9 +102,9 @@
     </link>
     <model name='cart_front_steer'>
       <link name='chassis'>
-        <pose frame=''>0 0 0.1 0 -0 3.14</pose>
+        <pose frame=''>0 0 0.1 0 -0 1.57</pose>
         <inertial>
-          <pose frame=''>0.1 0 0 0 -0 0</pose>
+          <pose frame=''>0.1 0 0 0 -0 1.57</pose>
           <mass>10</mass>
           <inertia>
             <ixx>0.216667</ixx>

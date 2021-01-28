@@ -379,7 +379,7 @@
       <pose>-0.2 0 0.2 0 0 3.14</pose>
     </include>
     <joint name="hokuyo_joint" type="fixed">
-      <parent>chassis</parent>
+      <parent>cart_front_steer::chassis</parent>
       <child>hokuyo::link</child>
     </joint>
   </model>

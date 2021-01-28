@@ -30,7 +30,7 @@
     <!-- A cart -->
     <include>
       <uri>model://cart_simple</uri>
-      <pose>0 0 0 0 0 3.14</pose>
+      <pose>0 0 0 0 0 1.5</pose>
     </include>
     
  <!--   <include>

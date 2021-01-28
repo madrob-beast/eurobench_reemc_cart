@@ -1,7 +1,7 @@
 <?xml version='1.0'?>
 <sdf version='1.6'>
   <model name='pushcart'>
-    <link name='link_1'>
+    <link name='handle_and_basket'>
       <pose frame=''>0.6 -0.24 0.06 1.57 -0 1.57</pose>
       <inertial>
         <mass>1</mass>
@@ -342,7 +342,7 @@
     </model>
     <joint name='chassis_JOINT_1' type='fixed'>
       <parent>cart_front_steer::chassis</parent>
-      <child>link_1</child>
+      <child>link_hokuyo</child>
       <pose frame=''>0 0 0 0 -0 0</pose>
       <axis>
         <xyz>1 0 0</xyz>

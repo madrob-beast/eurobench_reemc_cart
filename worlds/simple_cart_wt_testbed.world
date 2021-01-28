@@ -36,10 +36,6 @@
     <include>
       <uri>model://beast_testbed_no_floor</uri>
     </include>
-    
- <!--   <include>
-      <uri>model://distance_sensor_custom</uri>
-    </include> -->
-    
+
   </world>
 </sdf>

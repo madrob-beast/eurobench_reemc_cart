@@ -376,7 +376,7 @@
     <allow_auto_disable>1</allow_auto_disable>
     <include>
       <uri>model://hokuyo</uri>
-      <pose>0.2 0 0.2 0 0 0</pose>
+      <pose>-0.2 0 0.2 0 0 3.14</pose>
     </include>
     <joint name="hokuyo_joint" type="fixed">
       <child>hokuyo::link</child>

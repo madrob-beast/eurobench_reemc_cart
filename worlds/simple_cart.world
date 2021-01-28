@@ -27,9 +27,10 @@
     <include>
       <uri>model://ground_plane</uri>
     </include>
-    <!-- A door -->
+    <!-- A cart -->
     <include>
       <uri>model://cart_simple</uri>
+      <pose>0 0 0 0 0 3.14</pose>
     </include>
     
  <!--   <include>

@@ -380,7 +380,7 @@
     </include>
     <joint name="hokuyo_joint" type="fixed">
       <child>hokuyo::link</child>
-      <parent>pushcart</parent>
+      <parent>chassis</parent>
     </joint>
   </model>
 </sdf>

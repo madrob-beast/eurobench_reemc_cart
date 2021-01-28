@@ -102,6 +102,8 @@
     </link>
     <model name='cart_front_steer'>
       <link name='chassis'>
+      <child>cart_front_steer::chassis</child>
+      <parent>pushcart</parent>
         <pose frame=''>0 0 0.1 0 -0 0</pose>
         <inertial>
           <pose frame=''>0.1 0 0 0 -0 0</pose>
@@ -378,7 +380,7 @@
     </include>
     <joint name="hokuyo_joint" type="fixed">
       <child>hokuyo::link</child>
-      <parent>chassis</parent>
+      <parent>pushcart</parent>
     </joint>
   </model>
 </sdf>

@@ -26,6 +26,7 @@
     <!-- A ground plane -->
     <include>
       <uri>model://ground_plane</uri>
+                  <name>Gazebo/Footway</name>
     </include>
     <!-- A door -->
     <include>

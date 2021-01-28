@@ -379,8 +379,8 @@
       <pose>-0.2 0 0.2 0 0 3.14</pose>
     </include>
     <joint name="hokuyo_joint" type="fixed">
-      <child>hokuyo::link</child>
       <parent>chassis</parent>
+      <child>hokuyo::link</child>
     </joint>
   </model>
 </sdf>

@@ -99,6 +99,13 @@
           </contact>
         </surface>
       </collision>
+      <!-- force sensor -->
+       <sensor name='my_contact' type='contact'>
+          <contact>
+            <collision>collision</collision>
+          </contact>
+        </sensor>    
+      <!-- force sensor -->
     </link>
     <model name='cart_front_steer'>
       <link name='chassis'>
@@ -382,27 +389,6 @@
       <parent>cart_front_steer::chassis</parent>
       <child>hokuyo::link</child>
     </joint>
-    
-   <joint name="handle" type="prismatic">
-   <parent link="link_1"/>
-   <child link="frs"/>
-   <origin rpy="0 0 0" xyz="${xyz}"/>
-   <axis xyz="1 0 0"/>
-   <limit effort="1000" lower="-0.0001" upper="0.0001" velocity="10"/>
-  </joint>
-
-<gazebo reference="cart_handle">
-    <provideFeedback>true</provideFeedback>
-</gazebo>
-
-<!-- The ft_sensor plugin -->  
-<gazebo>
-    <plugin name="ft_sensor" filename="libgazebo_ros_ft_sensor.so">
-        <updateRate>100.0</updateRate>
-        <topicName>sensor_cart_handle</topicName>
-        <jointName>cart_handle</jointName>
-    </plugin>
-</gazebo>
-    
+        
   </model>
 </sdf>

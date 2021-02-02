@@ -50,9 +50,10 @@ void ContactPlugin::OnUpdate()
     if ((contacts.contact(i).collision1().find("pushcart") || 
         contacts.contact(i).collision2().find("pushcart")) && 
         ((contacts.contact(i).collision1().find("reemc") || 
-        contacts.contact(i).collision2().find("reemc")) ) {
+        contacts.contact(i).collision2().find("reemc")) ) ) {
         std::cout << "########################## It's the collision that we want!! \n";
     }
+    
     for (unsigned int j = 0; j < contacts.contact(i).position_size(); ++j) {
       std::cout << j << "  Position:"
                 << contacts.contact(i).position(j).x() << " "

@@ -1,4 +1,5 @@
 #include "ContactPlugin.hh"
+#include <string>
 
 using namespace gazebo;
 GZ_REGISTER_SENSOR_PLUGIN(ContactPlugin)
@@ -41,13 +42,18 @@ void ContactPlugin::OnUpdate()
   // Get all the contacts.
   msgs::Contacts contacts;
   contacts = this->parentSensor->Contacts();
-  for (unsigned int i = 0; i < contacts.contact_size(); ++i)
-  {
+  for (unsigned int i = 0; i < contacts.contact_size(); ++i) {
+
     std::cout << "Collision between[" << contacts.contact(i).collision1()
               << "] and [" << contacts.contact(i).collision2() << "]\n";
 
-    for (unsigned int j = 0; j < contacts.contact(i).position_size(); ++j)
-    {
+    if ((contacts.contact(i).collision1().find("pushcart") || 
+        contacts.contact(i).collision2().find("pushcart")) && 
+        ((contacts.contact(i).collision1().find("reemc") || 
+        contacts.contact(i).collision2().find("reemc")) ) {
+        std::cout << "########################## It's the collision that we want!! \n";
+    }
+    for (unsigned int j = 0; j < contacts.contact(i).position_size(); ++j) {
       std::cout << j << "  Position:"
                 << contacts.contact(i).position(j).x() << " "
                 << contacts.contact(i).position(j).y() << " "

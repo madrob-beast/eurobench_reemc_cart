@@ -1,8 +1,15 @@
 #include "ContactPlugin.hh"
 #include <string>
 
-#include "eurobench_bms_msgs_and_srvs/MadrobBenchmarkParams.h"
+
+#include "ros/ros.h"
+#include "ros/callback_queue.h"
+#include "ros/subscribe_options.h"
+#include "ros/service_client.h"
+
 #include "beast_msgs/Handle.h"
+#include <std_msgs/Float32.h>
+
 
 using namespace gazebo;
 GZ_REGISTER_SENSOR_PLUGIN(ContactPlugin)

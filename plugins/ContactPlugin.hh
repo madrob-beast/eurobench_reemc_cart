@@ -6,7 +6,7 @@
 #include <gazebo/gazebo.hh>
 #include <gazebo/sensors/sensors.hh>
 
-#include "ros/ros.h"
+
 
 
 namespace gazebo

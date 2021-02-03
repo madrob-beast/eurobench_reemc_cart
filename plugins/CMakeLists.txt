@@ -13,3 +13,6 @@ add_library(contact SHARED ContactPlugin.cc)
 target_link_libraries(contact ${GAZEBO_LIBRARIES})
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${GAZEBO_CXX_FLAGS}")
+
+
+

@@ -53,10 +53,31 @@ void ContactPlugin::OnUpdate()
         contacts.contact(i).collision2().find("pushcart")!=std::string::npos) && 
         ((contacts.contact(i).collision1().find("reemc")!=std::string::npos || 
         contacts.contact(i).collision2().find("reemc")!=std::string::npos) ) ) {
+        
         std::cout << "########################## It's the collision that we want!! \n";
+        
+        math::Vector3 actualForce;
+      math::Vector3 actualTorque;
+        
+        
+        for (unsigned int j = 0; j < contacts.contact(i).position_size(); ++j) {
+            std::cout << j << "  Position:"
+                << contacts.contact(i).position(j).x() << " "
+                << contacts.contact(i).position(j).y() << " "
+                << contacts.contact(i).position(j).z() << "\n";
+            
+            actualForce.x =
+                contacts[k].contact(i).wrench(j).body_1_wrench().force().x();
+            actualForce.y =
+                contacts[k].contact(i).wrench(j).body_1_wrench().force().y();
+            actualForce.z =
+                contacts[k].contact(i).wrench(j).body_1_wrench().force().z();
+                
+            std::cout << j << "\n  FORCE:" << actualForce << std::endl;
+        }
     }
     
-    for (unsigned int j = 0; j < contacts.contact(i).position_size(); ++j) {
+    /*for (unsigned int j = 0; j < contacts.contact(i).position_size(); ++j) {
       std::cout << j << "  Position:"
                 << contacts.contact(i).position(j).x() << " "
                 << contacts.contact(i).position(j).y() << " "
@@ -66,6 +87,8 @@ void ContactPlugin::OnUpdate()
                 << contacts.contact(i).normal(j).y() << " "
                 << contacts.contact(i).normal(j).z() << "\n";
       std::cout << "   Depth:" << contacts.contact(i).depth(j) << "\n";
-    }
+    }*/
+    
+    
   }
 }

@@ -67,11 +67,11 @@ void ContactPlugin::OnUpdate()
                 << contacts.contact(i).position(j).z() << "\n";
             
             actualForce.x =
-                contacts[k].contact(i).wrench(j).body_1_wrench().force().x();
+                contacts.contact(i).wrench(j).body_1_wrench().force().x();
             actualForce.y =
-                contacts[k].contact(i).wrench(j).body_1_wrench().force().y();
+                contacts.contact(i).wrench(j).body_1_wrench().force().y();
             actualForce.z =
-                contacts[k].contact(i).wrench(j).body_1_wrench().force().z();
+                contacts.contact(i).wrench(j).body_1_wrench().force().z();
                 
             std::cout << j << "\n  FORCE:" << actualForce << std::endl;
         }

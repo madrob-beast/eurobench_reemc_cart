@@ -54,11 +54,8 @@ void ContactPlugin::OnUpdate()
         ((contacts.contact(i).collision1().find("reemc")!=std::string::npos || 
         contacts.contact(i).collision2().find("reemc")!=std::string::npos) ) ) {
         
-        std::cout << "########################## It's the collision that we want!! \n";
-        
+        std::cout << "########################## collision between cart and any robot link \n";
         math::Vector3 actualForce;
-      math::Vector3 actualTorque;
-        
         
         for (unsigned int j = 0; j < contacts.contact(i).position_size(); ++j) {
             std::cout << j << "  Position:"
@@ -74,6 +71,7 @@ void ContactPlugin::OnUpdate()
                 contacts.contact(i).wrench(j).body_1_wrench().force().z();
                 
             std::cout << j << "\n  FORCE:" << actualForce << std::endl;
+            std::cout << j << "\n  FORCE magnitude:" << actualForce.GetLength() << std::endl;                        
         }
     }
     

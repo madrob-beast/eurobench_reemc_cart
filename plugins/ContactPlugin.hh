@@ -8,6 +8,7 @@
 
 #include "ros/ros.h"
 
+
 namespace gazebo
 {
   /// \brief An plugin for sensor.

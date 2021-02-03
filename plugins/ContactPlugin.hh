@@ -6,6 +6,8 @@
 #include <gazebo/gazebo.hh>
 #include <gazebo/sensors/sensors.hh>
 
+#include "ros/ros.h"
+
 namespace gazebo
 {
   /// \brief An plugin for sensor.
@@ -31,6 +33,10 @@ namespace gazebo
     /// \brief Connection that maintains a link between the contact sensor's
     /// updated signal and the OnUpdate callback.
     private: event::ConnectionPtr updateConnection;
+    
+    private: std::unique_ptr<ros::NodeHandle> rosNode;
+    private: ros::Publisher rosPub;
+    
   };
 }
 #endif

@@ -1,22 +1,38 @@
 #include "ContactPlugin.hh"
 #include <string>
 
+#include "eurobench_bms_msgs_and_srvs/MadrobBenchmarkParams.h"
+#include "beast_msgs/Handle.h"
+
 using namespace gazebo;
 GZ_REGISTER_SENSOR_PLUGIN(ContactPlugin)
 
 /////////////////////////////////////////////////
-ContactPlugin::ContactPlugin() : SensorPlugin()
-{
+ContactPlugin::ContactPlugin() : SensorPlugin() {
 }
 
 /////////////////////////////////////////////////
-ContactPlugin::~ContactPlugin()
-{
+ContactPlugin::~ContactPlugin() {
 }
 
 /////////////////////////////////////////////////
-void ContactPlugin::Load(sensors::SensorPtr _sensor, sdf::ElementPtr /*_sdf*/)
-{
+void ContactPlugin::Load(sensors::SensorPtr _sensor, sdf::ElementPtr /*_sdf*/) {
+
+  if (!ros::isInitialized()) {
+    int argc = 0;
+    char **argv = NULL;
+
+    ros::init(argc, argv, "handle_contact_publisher",
+        ros::init_options::NoSigintHandler);
+  }
+
+  // Create ROS node.
+  this->rosNode.reset(new ros::NodeHandle( "handle_contact_publisher" ));
+  
+  this->rosPub = this->rosNode->advertise<std_msgs::Float32>("/beast/handle/force",1);
+
+
+
   // Get the parent sensor.
   this->parentSensor =
     std::dynamic_pointer_cast<sensors::ContactSensor>(_sensor);
@@ -37,8 +53,8 @@ void ContactPlugin::Load(sensors::SensorPtr _sensor, sdf::ElementPtr /*_sdf*/)
 }
 
 /////////////////////////////////////////////////
-void ContactPlugin::OnUpdate()
-{
+void ContactPlugin::OnUpdate() {
+
   // Get all the contacts.
   msgs::Contacts contacts;
   contacts = this->parentSensor->Contacts();
@@ -71,7 +87,11 @@ void ContactPlugin::OnUpdate()
                 contacts.contact(i).wrench(j).body_1_wrench().force().z();
                 
             std::cout << j << "\n  FORCE:" << actualForce << std::endl;
-            std::cout << j << "\n  FORCE magnitude:" << actualForce.GetLength() << std::endl;                        
+            std::cout << j << "\n  FORCE magnitude:" << actualForce.GetLength() << std::endl;       
+            
+            std_msgs::Float64 msg;
+            msg.data = actualForce.GetLength();
+            this->rosPub.publish(msg);                 
         }
     }
     

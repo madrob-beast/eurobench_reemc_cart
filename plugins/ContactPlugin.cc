@@ -47,10 +47,12 @@ void ContactPlugin::OnUpdate()
     std::cout << "Collision between[" << contacts.contact(i).collision1()
               << "] and [" << contacts.contact(i).collision2() << "]\n";
 
-    if ((contacts.contact(i).collision1().find("pushcart") || 
-        contacts.contact(i).collision2().find("pushcart")) && 
-        ((contacts.contact(i).collision1().find("reemc") || 
-        contacts.contact(i).collision2().find("reemc")) ) ) {
+    
+
+    if ((contacts.contact(i).collision1().find("pushcart")!=std::string::npos || 
+        contacts.contact(i).collision2().find("pushcart")!=std::string::npos) && 
+        ((contacts.contact(i).collision1().find("reemc")!=std::string::npos || 
+        contacts.contact(i).collision2().find("reemc")!=std::string::npos) ) ) {
         std::cout << "########################## It's the collision that we want!! \n";
     }
     

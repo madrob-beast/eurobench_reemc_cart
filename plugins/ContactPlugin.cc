@@ -67,7 +67,7 @@ void ContactPlugin::OnUpdate() {
         ((contacts.contact(i).collision1().find("reemc")!=std::string::npos || 
         contacts.contact(i).collision2().find("reemc")!=std::string::npos) ) ) {
         
-//        std::cout << " collision between cart and any robot link \n";
+        // std::cout << " collision between cart and any robot link \n";
         for (unsigned int j = 0; j < contacts.contact(i).position_size(); ++j) {
                     
             actualForce.x =

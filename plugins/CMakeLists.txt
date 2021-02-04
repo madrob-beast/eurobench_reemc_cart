@@ -12,7 +12,7 @@ find_package(eurobench_bms_msgs_and_srvs REQUIRED)
 find_package(beast_msgs REQUIRED)
 include_directories(${roscpp_INCLUDE_DIRS})
 include_directories(${std_msgs_INCLUDE_DIRS})
-include_directories(${eurobench_bms_msgs_and_srvs_INCLUDE_DIRS})
+include_directories(${beast_msgs_INCLUDE_DIRS})
 
 
 find_package(gazebo REQUIRED)

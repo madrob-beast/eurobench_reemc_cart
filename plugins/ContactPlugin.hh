@@ -41,6 +41,8 @@ namespace gazebo
     private: std::unique_ptr<ros::NodeHandle> rosNode;
     private: ros::Publisher rosPub;
     
+    std_msgs::Float32 msg;
+    
   };
 }
 #endif

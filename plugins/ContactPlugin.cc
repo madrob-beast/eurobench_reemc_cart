@@ -93,7 +93,7 @@ void ContactPlugin::OnUpdate() {
             std::cout << j << "\n  FORCE:" << actualForce << std::endl;
             std::cout << j << "\n  FORCE magnitude:" << actualForce.GetLength() << std::endl;       
             
-            std_msgs::Float64 msg;
+            
             msg.data = actualForce.GetLength();
             this->rosPub.publish(msg);                 
         }

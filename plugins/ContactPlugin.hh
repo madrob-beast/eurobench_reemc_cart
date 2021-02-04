@@ -11,6 +11,7 @@
 #include "ros/subscribe_options.h"
 #include "ros/service_client.h"
 
+#include "std_msgs/Float32.h"
 
 namespace gazebo
 {

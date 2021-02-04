@@ -55,7 +55,7 @@ void ContactPlugin::Load(sensors::SensorPtr _sensor, sdf::ElementPtr /*_sdf*/) {
 
 void ContactPlugin::OnUpdate() {
 
-  msg.data = 0.0f;
+  math::Vector3 actualForce = {0.0f, 0.0f, 0.0f};
 
   // Get all the contacts.
   msgs::Contacts contacts;
@@ -68,7 +68,7 @@ void ContactPlugin::OnUpdate() {
         contacts.contact(i).collision2().find("reemc")!=std::string::npos) ) ) {
         
 //        std::cout << " collision between cart and any robot link \n";
-        math::Vector3 actualForce;
+        
         
         for (unsigned int j = 0; j < contacts.contact(i).position_size(); ++j) {
                     

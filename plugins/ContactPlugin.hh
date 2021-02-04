@@ -6,7 +6,10 @@
 #include <gazebo/gazebo.hh>
 #include <gazebo/sensors/sensors.hh>
 
-
+#include "ros/ros.h"
+#include "ros/callback_queue.h"
+#include "ros/subscribe_options.h"
+#include "ros/service_client.h"
 
 
 namespace gazebo

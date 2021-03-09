@@ -19,7 +19,7 @@
       <self_collide>0</self_collide>
       <kinematic>0</kinematic>
       <visual name='visual'>
-        <pose frame=''>-2.3 1 0 0 -0 0</pose>
+        <pose frame=''>2.3 1 0 0 -0 0</pose>
         <geometry>
           <mesh>
             <uri>model://beast_testbed_no_floor/meshes/beast_testbed_2_0.dae</uri>

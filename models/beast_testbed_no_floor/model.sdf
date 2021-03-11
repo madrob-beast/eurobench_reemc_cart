@@ -2,7 +2,7 @@
 <sdf version='1.6'>
   <model name='nofloor_14'>
     <link name='link_0'>
-      <pose frame=''>-0 0.01 0 0 -0 1.57</pose>
+      <pose frame=''>-0 0 0 0 -0 1.57</pose>
       <inertial>
         <mass>100</mass>
         <inertia>

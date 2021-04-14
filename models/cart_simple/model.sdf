@@ -1,7 +1,7 @@
 <?xml version='1.0'?>
 <sdf version='1.6'>
   <model name='pushcart'>
-    <link name='link_1'>
+    <link name='base_link'>
       <pose frame=''>0.6 -0.24 0.06 1.57 -0 1.57</pose>
       <inertial>
         <mass>1</mass>
@@ -19,7 +19,7 @@
       <self_collide>0</self_collide>
       <kinematic>0</kinematic>
       <visual name='visual'>
-        <pose frame=''>0.48 0 -1.22 0 -3.14 0</pose>
+        <pose frame=''>0.0 0 -0.0 0 0 0</pose>
         <geometry>
           <mesh>
             <uri>model://cart_simple/meshes/cart_upper.stl</uri>
@@ -46,7 +46,7 @@
       <collision name='collision'>
         <laser_retro>0</laser_retro>
         <max_contacts>10</max_contacts>
-        <pose frame=''>0.48 0 -1.22 0 -3.14 0</pose>
+        <pose frame=''>0.0 0 -0.0 0 0 0</pose>
         <geometry>
           <mesh>
             <uri>model://cart_simple/meshes/cart_upper.stl</uri>
@@ -108,11 +108,12 @@
         </sensor>    
       <!-- force sensor -->
     </link>
-    <model name='cart_front_steer'>
+      
+   <!-- <model name='cart_front_steer'>  -->
       <link name='chassis'>
-      <child>cart_front_steer::chassis</child>
-      <parent>pushcart</parent>
-        <pose frame=''>0 0 0.1 0 -0 0</pose>
+      <child>chassis</child>
+      <parent>base_link</parent>
+        <pose frame=''>0 0 0.1 0 0 0</pose>
         <inertial>
           <pose frame=''>0.1 0 0 0 -0 0</pose>
           <mass>10</mass>
@@ -188,8 +189,8 @@
         <axis>
           <xyz>0 -1 0</xyz>
           <limit>
-            <lower>-0.610865</lower>
-            <upper>0.610865</upper>
+            <lower>-0.0</lower>       <!--  610865 -->
+            <upper>0.0</upper>       <!--  610865 -->
           </limit>
           <use_parent_model_frame>0</use_parent_model_frame>
         </axis>
@@ -240,8 +241,8 @@
         <axis>
           <xyz>0 -1 0</xyz>
           <limit>
-            <lower>-0.610865</lower>
-            <upper>0.610865</upper>
+            <lower>-0.0</lower>       <!--  610865 -->
+            <upper>0.0</upper>        <!--  610865 -->
           </limit>
           <use_parent_model_frame>0</use_parent_model_frame>
         </axis>
@@ -347,10 +348,10 @@
         </axis>
       </joint>
       <pose frame=''>0 0 0 0 -0 0</pose>
-    </model>
+
     <joint name='chassis_JOINT_1' type='fixed'>
-      <parent>cart_front_steer::chassis</parent>
-      <child>link_1</child>
+      <parent>base_link</parent>
+      <child>chassis</child>
       <pose frame=''>0 0 0 0 -0 3.14</pose>
       <axis>
         <xyz>1 0 0</xyz>
@@ -380,16 +381,91 @@
         </ode>
       </physics>
     </joint>
-    <static>0</static>
-    <allow_auto_disable>1</allow_auto_disable>
-    <include>
-      <uri>model://hokuyo</uri>
-      <pose>-0.2 0 0.2 0 0 3.14</pose>
-    </include>
-    <joint name="hokuyo_joint" type="fixed">
-      <parent>cart_front_steer::chassis</parent>
-      <child>hokuyo::link</child>
+    
+    <joint name='laser_joint' type='fixed'>
+      <parent>chassis</parent>
+      <child>distance_sensor_custom::laser</child>
+      <pose frame=''>0 0 0 0 -0 3.14</pose>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <use_parent_model_frame>0</use_parent_model_frame>
+        <limit>
+          <lower>-1.79769e+308</lower>
+          <upper>1.79769e+308</upper>
+          <effort>-1</effort>
+          <velocity>-1</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+          <damping>0</damping>
+        </dynamics>
+      </axis>
+      <physics>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+          <suspension>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </suspension>
+        </ode>
+      </physics>
     </joint>
-        
+
+
+<!--    command the cart -->
+    <plugin name="differential_drive_controller" filename="libgazebo_ros_diff_drive.so">
+            <robotNamespace>/</robotNamespace>
+			<alwaysOn>true</alwaysOn>
+     	    <legacyMode>true</legacyMode>
+			<updateRate>100</updateRate>
+			<leftJoint>wheel_front_right_steer_spin</leftJoint>
+			<rightJoint>wheel_front_left_steer_spin</rightJoint>
+			<wheelSeparation>0.42</wheelSeparation>
+            <wheelDiameter>0.17</wheelDiameter>
+            <!-- <torque>5</torque> -->
+    		<torque>0</torque> 
+			<commandTopic>cmd_vel</commandTopic>
+			<!-- <odometryTopic>odom</odometryTopic>
+			<odometryFrame>odom</odometryFrame>-->
+			<!-- <robotBaseFrame>link_1</robotBaseFrame>-->
+			<publishTf>1</publishTf>
+			<rosDebugLevel>Debug</rosDebugLevel>
+			<wheelAcceleration>0</wheelAcceleration>
+			<wheelTorque>5</wheelTorque>
+			<robotBaseFrame>base_link</robotBaseFrame>
+			<publishWheelTF>false</publishWheelTF>
+			<publishWheelJointState>false</publishWheelJointState>
+			<odometrySource>world</odometrySource>
+		</plugin>
+    <!--   end command the cart -->
+    
+<!--     <plugin name="p3d_base_controller" filename="libgazebo_ros_p3d.so">
+      <robotNamespace>pushcart</robotNamespace>
+      <alwaysOn>true</alwaysOn>
+      <updateRate>50.0</updateRate> 
+      <bodyName>link_1</bodyName>
+      <topicName>odom</topicName> -->
+<!--       <gaussianNoise>0.01</gaussianNoise>  -->
+<!--       <frameName>world</frameName>
+      <xyzOffsets>0 0 0</xyzOffsets>
+      <rpyOffsets>0 0 90</rpyOffsets>
+    </plugin> -->
+ 
+     <static>0</static>
+    <allow_auto_disable>1</allow_auto_disable>
+    
+    
+   <include>
+      <uri>model://distance_sensor_custom</uri>             
+      <pose>0.3 0 0.2 0 0 0</pose>
+    </include>
+  
+    
+    
+  
   </model>
 </sdf>

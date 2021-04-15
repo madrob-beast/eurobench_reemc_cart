@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <sdf version="1.4">
-  <world name="simple_cart_wt_testbed">
+  <world name="simple_cart_wt_testbed9kg">
     <physics type="ode">
       <gravity>0 0 -9.81</gravity>
       <ode>
@@ -36,11 +36,16 @@
     <!-- A cart -->
     <include>
       <uri>model://cart_simple</uri>
-      <pose>0 0 0 0 0 3.14</pose>
+      <pose>0.2 0 0 0 0 0</pose>
     </include>
     <!-- the tesetbed environment -->
     <include>
       <uri>model://beast_testbed_no_floor</uri>
+    </include>
+    <!-- the extra weight -->
+    <include>
+      <uri>model://9kg_box</uri>
+      <pose>0.3 0 1.2 0 0 0</pose>      
     </include>
 
   </world>

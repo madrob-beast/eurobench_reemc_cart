@@ -4,25 +4,23 @@
   
   <arg name="cart"  default="simple_cart_wt_testbed"/>  <!-- empty... -->  
   <arg name="robot_approach_side"  default="CW"/>  <!-- empty... -->  
+  <arg name="extra_cart_weight"  default=""/>  
   <arg name="robot"  default="full_ft_hey5"/>  <!-- empty... -->
   <arg name="gzpose" default="-x -1.0 -y 0.0 -z 0.86 -R 0.0 -P 0.0 -Y 0"/> 
   <arg name="gui" default="true"/>
   <arg name="debug" default="false"/>
   <arg name="robot_placement_cw" default="true"/>
   
-
                    <!-- start up world -->
   <env name="GAZEBO_MODEL_PATH" value="$(find eurobench_reemc_cart)/models:$(optenv GAZEBO_MODEL_PATH)"/>
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
-    <arg name="world_name" value="$(find eurobench_reemc_cart)/worlds/$(arg cart).world"/>
+    <arg name="world_name" value="$(find eurobench_reemc_cart)/worlds/$(arg cart)$(arg extra_cart_weight).world"/>
     <arg name="paused" value="false"/>
     <arg name="use_sim_time" value="true"/>
     <arg name="gui" value="true"/>
     <arg name="recording" value="false"/>
     <arg name="debug" value="false"/> 
-  </include>
-  
-  
+  </include>  
   
                    <!-- spawn robot in simulation --> 
  <!--   <group ns="reem_c">      -->

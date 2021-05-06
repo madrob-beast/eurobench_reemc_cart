@@ -148,7 +148,7 @@
         </visual>
       </link>
       <link name='wheel_front_left'>
-        <pose frame=''>0.3 0.28 0.1 -1.5708 -0.087266 0</pose>
+        <pose frame=''>-0.3 0.28 0.1 -1.5708 -0.087266 0</pose>
         <inertial>
           <mass>0.5</mass>
           <inertia>
@@ -189,8 +189,8 @@
         <axis>
           <xyz>0 -1 0</xyz>
           <limit>
-            <lower>-0.0</lower>       <!--  610865 -->
-            <upper>0.0</upper>       <!--  610865 -->
+            <lower>-0.610865</lower>       <!--  610865 -->
+            <upper>0.610865</upper>       <!--  610865 -->
           </limit>
           <use_parent_model_frame>0</use_parent_model_frame>
         </axis>
@@ -200,7 +200,7 @@
         </axis2>
       </joint>
       <link name='wheel_front_right'>
-        <pose frame=''>0.3 -0.28 0.1 -1.5708 -0.087266 0</pose>
+        <pose frame=''>-0.3 -0.28 0.1 -1.5708 -0.087266 0</pose>
         <inertial>
           <mass>0.5</mass>
           <inertia>
@@ -241,8 +241,8 @@
         <axis>
           <xyz>0 -1 0</xyz>
           <limit>
-            <lower>-0.0</lower>       <!--  610865 -->
-            <upper>0.0</upper>        <!--  610865 -->
+            <lower>-0.610865</lower>       <!--  610865 -->
+            <upper>0.610865</upper>        <!--  610865 -->
           </limit>
           <use_parent_model_frame>0</use_parent_model_frame>
         </axis>
@@ -252,7 +252,7 @@
         </axis2>
       </joint>
       <link name='wheel_rear_left'>
-        <pose frame=''>-0.3 0.28 0.1 -1.5708 0 0</pose>
+        <pose frame=''>+0.3 0.28 0.1 -1.5708 0 0</pose>
         <inertial>
           <mass>0.5</mass>
           <inertia>
@@ -300,7 +300,7 @@
         </axis>
       </joint>
       <link name='wheel_rear_right'>
-        <pose frame=''>-0.3 -0.28 0.1 -1.5708 0 0</pose>
+        <pose frame=''>+0.3 -0.28 0.1 -1.5708 0 0</pose>
         <inertial>
           <mass>0.5</mass>
           <inertia>
@@ -426,12 +426,10 @@
 			<rightJoint>wheel_front_left_steer_spin</rightJoint>
 			<wheelSeparation>0.42</wheelSeparation>
             <wheelDiameter>0.17</wheelDiameter>
-            <!-- <torque>5</torque> -->
     		<torque>0</torque> 
 			<commandTopic>cmd_vel</commandTopic>
 			<!-- <odometryTopic>odom</odometryTopic>
 			<odometryFrame>odom</odometryFrame>-->
-			<!-- <robotBaseFrame>link_1</robotBaseFrame>-->
 			<publishTf>1</publishTf>
 			<rosDebugLevel>Debug</rosDebugLevel>
 			<wheelAcceleration>0</wheelAcceleration>
